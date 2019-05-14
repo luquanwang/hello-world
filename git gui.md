@@ -13,3 +13,9 @@
 - smartgit
 - gitkraken
 - git cola
+
+## sourcetree
+
+- 可以跳过注册
+- 版本3.0.17
+- 有free和enterprise版区
