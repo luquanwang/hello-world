@@ -1,6 +1,7 @@
 {
   "name": "docsify",
   "version": "4.9.4",
+  "description": "A magical documentation generator.",
   "author": {
     "name": "qingwei-li",
     "email": "cinwell.li@gmail.com",
