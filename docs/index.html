@@ -10,7 +10,7 @@
   <meta name="keywords" content="doc,docs,documentation,gitbook,creator,generator,github,jekyll,github-pages">
   <meta name="description" content="A magical documentation generator.">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css" title="vue">
+  <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css" title="vue" >
   <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/dark.css" title="dark" disabled>
   <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/buble.css" title="buble" disabled>
   <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/pure.css" title="pure" disabled>
@@ -35,11 +35,11 @@
         '/ru/(.*)': 'https://raw.githubusercontent.com/docsifyjs/docs-ru/master/$1',
         '/es/(.*)': 'https://raw.githubusercontent.com/docsifyjs/docs-es/master/$1'
       },
-      auto2top: true,
-      coverpage: true,
+      auto2top: false,
+      coverpage: false,
       executeScript: true,
       loadSidebar: true,
-      loadNavbar: true,
+      loadNavbar: false,
       mergeNavbar: true,
       maxLevel: 4,
       subMaxLevel: 2,
@@ -48,7 +48,7 @@
         host: '//matomo.thunderwave.de',
         id: 6
       },
-      name: 'docsify',
+      name: 'Develop',
       search: {
         noData: {
           '/de-de/': 'Keine Ergebnisse!',
@@ -63,26 +63,6 @@
         }
       },
       formatUpdated: '{MM}/{DD} {HH}:{mm}',
-      plugins: [
-        function (hook, vm) {
-          hook.beforeEach(function (html) {
-            if (/githubusercontent\.com/.test(vm.route.file)) {
-              url = vm.route.file
-                .replace('raw.githubusercontent.com', 'github.com')
-                .replace(/\/master/, '/blob/master')
-            } else {
-              url = 'https://github.com/docsifyjs/docsify/blob/master/docs/' + vm.route.file
-            }
-            var editHtml = '[:memo: Edit Document](' + url + ')\n'
-
-            return editHtml
-              + html
-              + '\n\n----\n\n'
-              + '<a href="https://docsify.js.org" target="_blank" style="color: inherit; font-weight: normal; text-decoration: none;">Powered by docsify</a>'
-          })
-        },
-        DocsifyCodefund.create('fae1f9a4-870c-4c25-b8e0-c80464f7a95c')
-      ]
     }
   </script>
   <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
@@ -93,12 +73,6 @@
   <script src="//unpkg.com/prismjs/components/prism-markdown.min.js"></script>
   <script src="//unpkg.com/prismjs/components/prism-nginx.min.js"></script>
   
-  <script>
-  ((window.gitter = {}).chat = {}).options = {
-    room: 'docsifyjs/Lobby'
-  };
-  </script>
-  <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
 </body>
 
 </html>
